@@ -1,6 +1,3 @@
-*html text eol=lf
-*css text eol=lf
-*js text eol=lf
-tests/staticfiles_tests/apps/test/static/test/*txt text eol=lf
-tests/staticfiles_tests/project/documents/test/*txt text eol=lf
-docs/releases/*.txt merge=union
+blogpy/ckeditor/ linguist-vendored
+ckeditor/ linguist-vendored
+static/ linguist-vendored
