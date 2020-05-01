@@ -1,3 +1,4 @@
 blogpy/ckeditor/ linguist-vendored
 ckeditor/ linguist-vendored
 static/ linguist-vendored
+linguist-language=python
