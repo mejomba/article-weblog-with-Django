@@ -78,22 +78,22 @@ class SingleArticle(APIView):
             return Response({'status': "Internal Server Error 500"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-# class SearchArticle(APIView):
-#     def get(self, request, format=None):
-#         try:
-#             from django.db.models import Q
-#             query = request.GET['query']
-#             articles = Article.objects.filter(Q(content__icontains=query))
-#             data = []
-#             for article in articles:
-#                 data.append({
-#                     'title': article.title,
-#                     'author': article.author.user.first_name + ' ' + article.author.user.last_name,
-#                     'content': article.content,
-#                     'cover': article.cover.url if article.cover else None,
-#                     'created_at': article.created_at.date(),
-#                     'category': article.category.title,
-#                 })
-#             return Response({'data': data}, status=status.HTTP_200_OK)
-#         except:
-#             return Response({'status': "Internal Server Error 500"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+class SearchArticle(APIView):
+    def get(self, request, format=None):
+        try:
+            from django.db.models import Q
+            query = request.GET['query']
+            articles = Article.objects.filter(Q(content__icontains=query))
+            data = []
+            for article in articles:
+                data.append({
+                    'title': article.title,
+                    'author': article.author.user.first_name + ' ' + article.author.user.last_name,
+                    'content': article.content,
+                    'cover': article.cover.url if article.cover else None,
+                    'created_at': article.created_at.date(),
+                    'category': article.category.title,
+                })
+            return Response({'data': data}, status=status.HTTP_200_OK)
+        except:
+            return Response({'status': "Internal Server Error 500"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
