@@ -43,7 +43,7 @@
                 <a class="nav-link" href="profile.html">پروفایل</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="about.html">درباره ما</a>
+                <a class="nav-link" href="{% url 'about_us' %}">درباره ما</a>
             </li>
         </ul>
 
@@ -70,24 +70,27 @@
 
     <div id="carouselExampleIndicators" class="carousel slide shadow mb-5 bg-dark" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            {% for foo in promoted_article %}
+                {% if forloop.first %}
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter0 }}" class="active"></li>
+                {% else %}
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter0 }}"></li>
+                {% endif %}
+            {% endfor %}
         </ol>
 
             <div class="carousel-inner">
-            {% for promoted in promoted_article %}
+                {% for promoted in promoted_article %}
                 {% if forloop.counter0 == 0 %}
                 <div class="carousel-item active">
                 {% else %}
-                    <div class="carousel-item">
+                <div class="carousel-item">
                 {% endif %}
-                <img class="d-block w-100" style="width: 1000px; height: 500px;" src="{{ promoted.cover }}" alt="{{ promoted.title }}">
+                <img class="d-block w-100" style="width: 1000px; height: 400px;" src="{{ promoted.cover }}" alt="{{ promoted.title }}">
                <a href="#">
                    <div class="carousel-caption d-none d-md-block text-white shadow mb-4 bg-dark-65">
                        <h4 class="h2">{{promoted.title}}</h4>
-                       <p class="h4">{{ promoted.abstract }}</p>
+                       <p class="h6">{{ promoted.abstract }}</p>
                     </div>
                </a>
             </div>

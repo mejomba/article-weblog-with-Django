@@ -32,3 +32,8 @@ class IndexView(TemplateView):
                    'promoted_article': promoted_article,
                    }
         return render(request, 'index.html', context)
+
+
+class AboutUs(TemplateView):
+
+    template_name = 'about.html'
