@@ -9,7 +9,7 @@ def file_ext_validation(value):
     import os
     from django.core.exceptions import ValidationError
     ext = os.path.splitext(value.name)[1]
-    valid_ext = ['.jpg', '.png']
+    valid_ext = ['.jpg', '.png', '.jpeg']
     if ext not in valid_ext:
         raise ValidationError('Unsupported file extension')
 
@@ -26,10 +26,11 @@ class UserProfile(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=150, null=False, blank=False)
     cover = models.FileField(upload_to='files/article_cover/', null=False, blank=False, validators=[file_ext_validation])
+    abstract = models.TextField(max_length=150, default='چکیده مقاله موجود نیست', null=False, blank=False)
     content = RichTextField()
     created_at = models.DateTimeField(auto_now=datetime.now, blank=False)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
-    author = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
+    author = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
 
 class Category(models.Model):

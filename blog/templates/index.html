@@ -30,7 +30,7 @@
 
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">خانه</a>
+                <a class="nav-link" href="/">خانه</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="register.html">ثبت نام</a>
@@ -109,22 +109,21 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-
-
-
-
     <!--    end main slider    -->
 
 
     <!--    begin main content-->
     <div class="container">
     <div class="row mb-3">
+
+        {% for article in content %}
+
         <div class="col-12 col-md-4">
             <div class="card mb-2">
-                <img class="card-img-top" src="static/images/1-300200.jpeg" alt="Card image cap">
+                <img class="card-img-top" src="{{ article.cover }}" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title text-right">عنوان مقاله</h5>
-                <p class="card-text text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
+                <h5 class="card-title text-right">{{ article.title }}</h5>
+                <p class="card-text text-justify">{{ article.abstract }}</p>
                   <a href="#" target="_blank" class="ml-2 fab fa-telegram-plane"></a>
                   <a href="#" target="_blank" class="ml-2 fab fa-instagram"></a>
                   <a href="#" target="_blank" class="ml-2 fab fa-google-plus-g"></a>
@@ -134,138 +133,10 @@
             </div>
         </div>
 
-        <div class="col-12 col-md-4">
-            <div class="card mb-2">
-                <img class="card-img-top" src="static/images/1-300200.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title text-right">عنوان مقاله</h5>
-                <p class="card-text text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-                  <a href="#" target="_blank" class="ml-2 fab fa-telegram-plane"></a>
-                  <a href="#" target="_blank" class="ml-2 fab fa-instagram"></a>
-                  <a href="#" target="_blank" class="ml-2 fab fa-google-plus-g"></a>
-                  <a href="#" target="_blank" class="ml-4 fab fa-linkedin-in"></a>
-                  <a href="#" target="_blank" class="btn btn-outline-primary font-weight-bold">مطالعه</a>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-            <div class="card mb-2">
-                <img class="card-img-top" src="static/images/1-300200.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title text-right">عنوان مقاله</h5>
-                <p class="card-text text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-                  <a href="#" target="_blank" class="ml-2 fab fa-telegram-plane"></a>
-                  <a href="#" target="_blank" class="ml-2 fab fa-instagram"></a>
-                  <a href="#" target="_blank" class="ml-2 fab fa-google-plus-g"></a>
-                  <a href="#" target="_blank" class="ml-4 fab fa-linkedin-in"></a>
-                  <a href="#" target="_blank" class="btn btn-outline-primary font-weight-bold">مطالعه</a>
-              </div>
-            </div>
-        </div>
-
-    </div>
-
-
-
-            <div class="row mb-3">
-        <div class="col-12 col-md-4">
-            <div class="card mb-2">
-                <img class="card-img-top" src="static/images/1-300200.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title text-right">عنوان مقاله</h5>
-                <p class="card-text text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-                  <a href="#" target="_blank" class="ml-2 fab fa-telegram-plane"></a>
-                  <a href="#" target="_blank" class="ml-2 fab fa-instagram"></a>
-                  <a href="#" target="_blank" class="ml-2 fab fa-google-plus-g"></a>
-                  <a href="#" target="_blank" class="ml-4 fab fa-linkedin-in"></a>
-                  <a href="#" target="_blank" class="btn btn-outline-primary font-weight-bold">مطالعه</a>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-            <div class="card mb-2">
-                <img class="card-img-top" src="static/images/1-300200.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title text-right">عنوان مقاله</h5>
-                <p class="card-text text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-                  <a href="#" target="_blank" class="ml-2 fab fa-telegram-plane"></a>
-                  <a href="#" target="_blank" class="ml-2 fab fa-instagram"></a>
-                  <a href="#" target="_blank" class="ml-2 fab fa-google-plus-g"></a>
-                  <a href="#" target="_blank" class="ml-4 fab fa-linkedin-in"></a>
-                  <a href="#" target="_blank" class="btn btn-outline-primary font-weight-bold">مطالعه</a>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-            <div class="card mb-2">
-                <img class="card-img-top" src="static/images/1-300200.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title text-right">عنوان مقاله</h5>
-                <p class="card-text text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-                  <a href="#" target="_blank" class="ml-2 fab fa-telegram-plane"></a>
-                  <a href="#" target="_blank" class="ml-2 fab fa-instagram"></a>
-                  <a href="#" target="_blank" class="ml-2 fab fa-google-plus-g"></a>
-                  <a href="#" target="_blank" class="ml-4 fab fa-linkedin-in"></a>
-                  <a href="#" target="_blank" class="btn btn-outline-primary font-weight-bold">مطالعه</a>
-              </div>
-            </div>
-        </div>
-
-    </div>
-
-
-            <div class="row mb-3">
-        <div class="col-12 col-md-4">
-            <div class="card mb-2">
-                <img class="card-img-top" src="static/images/1-300200.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title text-right">عنوان مقاله</h5>
-                <p class="card-text text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-                  <a href="#" target="_blank" class="ml-2 fab fa-telegram-plane"></a>
-                  <a href="#" target="_blank" class="ml-2 fab fa-instagram"></a>
-                  <a href="#" target="_blank" class="ml-2 fab fa-google-plus-g"></a>
-                  <a href="#" target="_blank" class="ml-4 fab fa-linkedin-in"></a>
-                  <a href="#" target="_blank" class="btn btn-outline-primary font-weight-bold">مطالعه</a>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-            <div class="card mb-2">
-                <img class="card-img-top" src="static/images/1-300200.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title text-right">عنوان مقاله</h5>
-                <p class="card-text text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-                  <a href="#" target="_blank" class="ml-2 fab fa-telegram-plane"></a>
-                  <a href="#" target="_blank" class="ml-2 fab fa-instagram"></a>
-                  <a href="#" target="_blank" class="ml-2 fab fa-google-plus-g"></a>
-                  <a href="#" target="_blank" class="ml-4 fab fa-linkedin-in"></a>
-                  <a href="#" target="_blank" class="btn btn-outline-primary font-weight-bold">مطالعه</a>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-            <div class="card mb-2">
-                <img class="card-img-top" src="static/images/1-300200.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title text-right">عنوان مقاله</h5>
-                <p class="card-text text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است</p>
-                  <a href="#" target="_blank" class="ml-2 fab fa-telegram-plane"></a>
-                  <a href="#" target="_blank" class="ml-2 fab fa-instagram"></a>
-                  <a href="#" target="_blank" class="ml-2 fab fa-google-plus-g"></a>
-                  <a href="#" target="_blank" class="ml-4 fab fa-linkedin-in"></a>
-                  <a href="#" target="_blank" class="btn btn-outline-primary font-weight-bold">مطالعه</a>
-              </div>
-            </div>
-        </div>
+        {% endfor %}
 
     </div>
     </div>
-
     <!--    end main content-->
 
     <hr class="my-4">
