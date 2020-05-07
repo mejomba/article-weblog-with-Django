@@ -124,11 +124,20 @@
               <div class="card-body">
                 <h5 class="card-title text-right">{{ article.title }}</h5>
                 <p class="card-text text-justify">{{ article.abstract }}</p>
+                  <div class="d-flex flex-row">
+                      <div class="ml-2"><img class="rounded-50" src="{{ article.author.avatar.url }}" style="width: 60px; height: 60px;"></div>
+                      <span class="mt-4"><a  href="#">{{ article.author }}</a></span>
+                  </div>
+
+                  <br/>
+                  <hr>
                   <a href="#" target="_blank" class="ml-2 fab fa-telegram-plane"></a>
                   <a href="#" target="_blank" class="ml-2 fab fa-instagram"></a>
                   <a href="#" target="_blank" class="ml-2 fab fa-google-plus-g"></a>
                   <a href="#" target="_blank" class="ml-4 fab fa-linkedin-in"></a>
                   <a href="#" target="_blank" class="btn btn-outline-primary font-weight-bold">مطالعه</a>
+
+
               </div>
             </div>
         </div>

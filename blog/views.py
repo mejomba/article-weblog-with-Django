@@ -11,7 +11,7 @@ class IndexView(TemplateView):
         for article in all_article:
             content.append({
                 'title': article.title,
-                'cover': article.cover.url,
+                'cover': article.cover.url if article.cover else None,
                 'created_at': article.created_at.date(),
                 'category': article.category,
                 'author': article.author,
