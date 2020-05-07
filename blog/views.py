@@ -18,5 +18,17 @@ class IndexView(TemplateView):
                 'abstract': article.abstract,
             })
 
-        context = {'content': content}
+        promoted_article = []
+        all_promoted_article = Article.objects.filter(promote=True)
+        for promoted in all_promoted_article:
+            promoted_article.append({
+                'title': promoted.title,
+                'abstract': promoted.abstract,
+                'cover': promoted.cover.url if promoted.cover else None,
+                'author': promoted.author,
+            })
+
+        context = {'content': content,
+                   'promoted_article': promoted_article,
+                   }
         return render(request, 'index.html', context)
