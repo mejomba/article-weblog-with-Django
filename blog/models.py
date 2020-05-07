@@ -31,6 +31,7 @@ class Article(models.Model):
     created_at = models.DateTimeField(auto_now=datetime.now, blank=False)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
     author = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    promote = models.BooleanField('در اسلایدر نمایش داده شود', default=False)
 
 
 class Category(models.Model):
