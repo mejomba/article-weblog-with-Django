@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('blog.urls')),
+    url(r'^api-auth/', include('rest_framework.urls')),
 ]
 # TODO remove in production
 if settings.DEBUG:
