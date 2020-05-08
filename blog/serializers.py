@@ -18,6 +18,7 @@ class SubmitArticleSerializer(serializers.Serializer):
     promote = serializers.BooleanField(required=True, allow_null=False)
 
 
+# TODO cover update API to wrong directory
 class CoverUpdate(serializers.Serializer):
     article_id = serializers.IntegerField(required=True, allow_null=False)
-    cover = serializers.FileField(required=True, allow_null=False, allow_empty_file=False, max_length=256)
+    cover = serializers.FileField(required=True, allow_null=False, allow_empty_file=False)

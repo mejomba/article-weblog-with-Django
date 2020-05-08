@@ -134,8 +134,9 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+# TODO cover update API to wrong directory
 # media
-MEDIA_URL = '/media/'
+MEDIA_URL = 'files/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '')
 
 # CKEditor

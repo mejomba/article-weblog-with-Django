@@ -131,6 +131,7 @@ class SubmitArticle(APIView):
             return Response({'status': "Internal Server Error 500"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
+# TODO cover update API to wrong directory
 class UpdateCoverArticle(APIView):
 
     def post(self, request, format=None):
@@ -141,9 +142,9 @@ class UpdateCoverArticle(APIView):
 
                 cover = request.FILES['cover']
             else:
-                return Response({'data': 'bad request'}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({'status': 'bad request'}, status=status.HTTP_400_BAD_REQUEST)
             Article.objects.filter(id=article_id).update(cover=cover)
-            return Response({'data': 'OK'}, status.HTTP_200_OK)
+            return Response({'status': 'OK'}, status.HTTP_200_OK)
 
         except:
             return Response({'status': "Internal Server Error 500"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
