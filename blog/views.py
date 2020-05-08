@@ -97,3 +97,53 @@ class SearchArticle(APIView):
             return Response({'data': data}, status=status.HTTP_200_OK)
         except:
             return Response({'status': "Internal Server Error 500"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class SubmitArticle(APIView):
+
+    def post(self, request, format=None):
+        try:
+            serializer = serializers.SubmitArticleSerializer(data=request.data)
+            if serializer.is_valid():
+                title = serializer.data.get('title')
+                cover = request.FILES['cover']
+                author_id = serializer.data.get('author_id')
+                content = serializer.data.get('content')
+                abstract = serializer.data.get('abstract')
+                category_id = serializer.data.get('category_id')
+                promote = serializer.data.get('promote')
+            else:
+                return Response({'data': 'bad request'}, status=status.HTTP_400_BAD_REQUEST)
+            user = User.objects.get(id=author_id)
+            author = UserProfile.objects.get(user=user)
+            category = Category.objects.get(id=category_id)
+            article = Article()
+            article.title = title
+            article.cover = cover
+            article.author = author
+            article.content = content
+            article.abstract = abstract
+            article.category = category
+            article.promote = promote
+            article.save()
+            return Response({'data': 'OK'}, status=status.HTTP_200_OK)
+        except:
+            return Response({'status': "Internal Server Error 500"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class UpdateCoverArticle(APIView):
+
+    def post(self, request, format=None):
+        try:
+            serializer = serializers.CoverUpdate(data=request.data)
+            if serializer.is_valid():
+                article_id = serializer.data.get('article_id')
+
+                cover = request.FILES['cover']
+            else:
+                return Response({'data': 'bad request'}, status=status.HTTP_400_BAD_REQUEST)
+            Article.objects.filter(id=article_id).update(cover=cover)
+            return Response({'data': 'OK'}, status.HTTP_200_OK)
+
+        except:
+            return Response({'status': "Internal Server Error 500"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
