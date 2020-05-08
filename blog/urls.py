@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^api/search/$', views.SearchArticle.as_view(), name='search_article'),
     url(r'^api/submit/$', views.SubmitArticle.as_view(), name='submit_article'),
     url(r'^api/update_cover/$', views.UpdateCoverArticle.as_view(), name='cover_update'),
+    url(r'^api/delete_article$', views.DeleteArticle.as_view(), name='delete_article'),
 ]
